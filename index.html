@@ -7,27 +7,32 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <link rel="stylesheet" type="text/css" href="site.css"></link>
         <script type="text/javascript" src="js/jquery-1.8.3.js"></script>
-        <script type="text/javascript" src="js/infinitecarousel/jquery.infinitecarousel3.js"></script>
+
         <script type="text/javascript" src="js/infinitecarousel/jquery.infinitecarousel3.min.js"></script>
+        <script type="text/javascript" src="js/infinitecarousel/easing.js"></script>
     </head>
     <script type="text/javascript">
     $(document).ready(function(){
 	    $("#carousel").infiniteCarousel({
-	    	transitionSpeed: 300,
-			displayTime: 6000,
-			internalThumbnails: false,
-			thumbnailType: 'buttons',
-			customClass: 'myCarousel',
-			progressRingColorOpacity: '0,0,0,1',
-			progressRingBackgroundOn: false,
-			margin: 10,
-			easeLeft: 'easeOutExpo',
-			easeRight:'easeOutQuart',
-			inView: 1,
-			advance: 1,
-			autoPilot: true,
-			prevNextInternal: true,
-			autoHideCaptions: false
+	    	  	transitionSpeed: 500,
+			   displayTime: 8000,
+			   internalThumbnails: true,
+			   thumbnailType: 'buttons',
+			   customClass: 'myCarousel',
+			   progressRingColorOpacity: '0,0,0,1',
+			   progressRingBackgroundOn: false,
+			   
+			   easeLeft: 'easeOutExpo',
+			   easeRight:'easeOutQuart',
+			   inView: 1,
+			   advance: 1,
+			   autoPilot: true,
+			   prevNextInternal: true,
+			   autoHideCaptions: false,
+			   imagePath: 'js/infinitecarousel/images/',
+			   displayProgressRing: false,
+			   showControls:false
+
 	    });
 	});
     </script>
@@ -188,10 +193,44 @@
     				</div>
     				<div class="corusel">
     					<ul id="carousel">
-					        <li><img width="978" height="260" alt="" src="p1.png" /><p>This is <strong>a caption</strong></p></li>
-					        <li><a href="http://www.google.com"><img width="200" height="133" alt="" src="p2.png" /></a></li>
-					        <li><a href="http://www.google.com"><img width="200" height="133" alt="" src="p3.png" /></a></li>
+					        <li>
+					        	<img width="978" height="260" alt="" src="img/slide1.png" />
+					        	<p><span class="slideHeader">Summer offer </span><span class="slideInf">Best prices for new products</span></p>
+
+					        </li>
+					        <li>
+					        	<img width="978" height="260" alt="" src="img/slide1.png" />
+					        	<p><span class="slideHeader">Summer offer </span><span class="slideInf">Best prices for new products</span></p>
+					        </li>
+					        <li>
+					        	<img width="978" height="260" alt="" src="img/slide1.png" />
+					        	<p><span class="slideHeader">Summer offer </span><span class="slideInf">Best prices for new products</span></p>
+					        </li>
+					        <li>
+					        	<img width="978" height="260" alt="" src="img/slide1.png" />
+						        <p><span class="slideHeader">Summer offer </span><span class="slideInf">Best prices for new products</span></p>
+						    </li>
 					    </ul>
+    				</div>
+    				<div class="productssolutions clearfix">
+    					<div class="psColumn pColumn">
+    						<div class="columnHeader">Products</div>
+    						<div class="newsHeader">Digital Аudio Recorders</div>
+    						<div class="news">Digital audio recorders Edic-mini are intended for professional recording voice messages into flash memory. The recorder features an extremely small size and weight, long record time (up to 2400 hours), very low power consumption and wide frequency range. </div>
+    						<div class="newsHeader">Audio Recording Modules</div>
+    						<div class="news">The modules are based on hardware of audio recorders Edic-mini and are designed as printed circuit boards. They can be mounted into various devices to function as voice recorders. The application is broad - our modules are widely used for various recording devices of different design.</div>
+    						<div class="newsHeader">Аudio-Video Recorders</div>
+    						<div class="news">Models of mAVR H.264 series can be located anywhere to provide discreet video surveillance with outstanding H.264 performance. The models record onto SD/SDHC memory card with capacity up to 32 GB, with subsequent decoding (converting) and possibility of playing back the recording on a computer. </div>
+    					</div>
+    					<div class="psColumn sColumn">
+    						<div class="columnHeader">Solutions</div>
+    						<div class="newsHeader">Digital Аudio Recorders</div>
+    						<div class="news">Digital audio recorders Edic-mini are intended for professional recording voice messages into flash memory. The recorder features an extremely small size and weight, long record time (up to 2400 hours), very low power consumption and wide frequency range. </div>
+    						<div class="newsHeader">Audio Recording Modules</div>
+    						<div class="news">The modules are based on hardware of audio recorders Edic-mini and are designed as printed circuit boards. They can be mounted into various devices to function as voice recorders. The application is broad - our modules are widely used for various recording devices of different design.</div>
+    						<div class="newsHeader">Аudio-Video Recorders</div>
+    						<div class="news">Models of mAVR H.264 series can be located anywhere to provide discreet video surveillance with outstanding H.264 performance. The models record onto SD/SDHC memory card with capacity up to 32 GB, with subsequent decoding (converting) and possibility of playing back the recording on a computer. </div>
+    					</div>
     				</div>
     			</div>
     		</div>

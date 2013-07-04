@@ -34,7 +34,6 @@ input:focus{
 .pageContainer{
     width: 1000px;
     margin: 0 auto;
-    border: 1px solid black;
 }
 .header{
     background: url(img/atom.png) no-repeat top center;
@@ -205,20 +204,87 @@ line-height: 0;
     width: 978px !important;
 }
 
-.infiniteCarousel_item{
-    margin: 0 !important;
-}
 #ic_canvas_4213152{
     display: none;
 }
-
+.ic_right_nav,
 .ic_left_nav{
-    background-color: grey;
-    height: 260px;
+    background-color: white;
+    height: 225px;
     top: 0 !important;
+    z-index: 20;
+    position: relative;
+}
+.ic_right_nav img,
+.ic_left_nav img{
+    padding-top: 103px;
+    padding-bottom: 104px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
+.ic_myCarousel .ic_button {
+    background: white;
+    width: 8px;
+    height: 8px;
+    position: relative;
+    float: left;
+    margin-right: 6px;
+    border-radius: 8px;
+    margin-top: 1px;
+}
+.ic_myCarousel .ic_active{
+    background: #5384d0;
+}
+.ic_thumbnail_tray{
+    bottom: 160px !important;
+    left: 40px !important;
+    width: auto !important;
+}
 
+.ic_caption{
+    position: absolute;
+    width: 240px;
+    height: 135px;
+    padding: 15px 20px 25px 20px;
+    background-color: #5384d0; 
+    left: 40px;
+    bottom: 16px !important;
+    color: white;
+}
+.ic_caption .slideHeader{
+    color: #a9c2e8;
+    font-family: Tahoma;
+    font-size: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #759dd9;
+    display: block;
+}
+
+.ic_caption .slideInf{
+    font-family: Tahoma;
+    font-weight: bold;
+    font-size: 24px;
+    display: block;
+    margin-top: 5px;
+    line-height: 30px;
+}
+
+.productssolutions{
+    margin-top: 11px;
+}
+
+.psColumn{
+    width: 480px;
+    background-color: #f9f9f9;
+    padding: 20px 20px 30px 20px;
+}
+.pColumn{
+    float: left;
+}
+.sColumn{
+    float: right;
+}
 
 
 
