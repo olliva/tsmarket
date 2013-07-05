@@ -10,9 +10,13 @@
 
         <script type="text/javascript" src="js/infinitecarousel/jquery.infinitecarousel3.min.js"></script>
         <script type="text/javascript" src="js/infinitecarousel/easing.js"></script>
+        <link href="amazon_scroller.css" rel="stylesheet" type="text/css"></link>
+		<script type="text/javascript" src="js/amazon_scroller.js"></script>
+		<script type="text/javascript" src="js/modernizr.js"></script>
     </head>
     <script type="text/javascript">
     $(document).ready(function(){
+
 	    $("#carousel").infiniteCarousel({
 	    	  	transitionSpeed: 500,
 			   displayTime: 8000,
@@ -34,14 +38,63 @@
 			   showControls:false
 
 	    });
-	});
+
+	    checkColumnHeight();
+	    $("#amazon_scroller").amazon_scroller({
+	        scroller_title_show: 'enable',//enable  disable  
+	        scroller_time_interval: '20000',
+	        scroller_window_background_color: "#FFF",
+	        scroller_window_padding: '0',
+	        scroller_border_size: '2',
+	        scroller_border_color: '#CCC',
+	        scroller_images_width: '220',
+	        scroller_images_height: '320',
+	        scroller_title_size: '11',
+	        scroller_title_color: '#000',
+	        scroller_show_count: '4',
+	        directory: 'img'
+	    });
+
+	    function checkColumnHeight()
+	    {
+	     var $pColumn = $(".pColumn .contentPart");
+	     var $sColumn = $(".sColumn .contentPart");
+
+	     if ($pColumn.height()>$sColumn.height())
+	        {
+	            $sColumn.css("height",$pColumn.height() + "px");
+	        }
+	        else
+	        {
+	         $pColumn.css("height",$sColumn.height() + "px");
+	        }
+	    }
+
+	    var max = -1;
+		$(".amazon_scroller_mask ul li").each(function() {
+		    var h = $(this).find($(".latestNewsContainer")).height(); 
+		    max = h > max ? h : max;
+		});
+		max = max + 165;
+		$(".amazon_scroller_mask ul li").each(function() {
+		    $(this).find($(".latestNewsContainer")).css("height", max +"px");
+		});
+		$(".amazon_scroller_mask").css("height", max + 6 + "px");
+		$("..amazon_scroller").css("height", max + 6 + "px");
+
+    });
     </script>
+
     <body>
     	<div class="page">
     		<div class="pageContainer">
     			<div class="header clearfix">
     				<a href="#" class="logo">
     					<img src="img/logo.png"/>
+    					<div class="compName">
+    						<span>TS-MARKET</span><br>
+    						Digital Audio &amp; Video Recoders
+    					</div>
     				</a>
     				<div class="headerInformation">
     					<div class="clearfix">
@@ -57,7 +110,10 @@
 	    						<li><a href="" class="telephoneNumber">+7 (495) 638-88-00</a></li>
 	    					</ul>
     					</div>
-    					<input type="text" class="headerInput" placeholder="search"/>
+    					<div class="searchContainer clearfix">
+    						<input type="text" class="headerInput" placeholder="search"/>
+    						<a href=""><img src="img/loupe-white.png"/></a>
+    					</div>
     					<div>
     						<a href="#" class="advancedSearch">Advanced search</a>
     					</div>
@@ -190,6 +246,11 @@
 								</div>
 							</li>
 						</ul>
+						<div class="icons">
+							<a class="home" href="#"></a>
+							<a class="map" href="#"></a>
+							<a class="mailme" href="#"></a>
+						</div>
     				</div>
     				<div class="corusel">
     					<ul id="carousel">
@@ -214,22 +275,188 @@
     				</div>
     				<div class="productssolutions clearfix">
     					<div class="psColumn pColumn">
-    						<div class="columnHeader">Products</div>
-    						<div class="newsHeader">Digital Аudio Recorders</div>
-    						<div class="news">Digital audio recorders Edic-mini are intended for professional recording voice messages into flash memory. The recorder features an extremely small size and weight, long record time (up to 2400 hours), very low power consumption and wide frequency range. </div>
-    						<div class="newsHeader">Audio Recording Modules</div>
-    						<div class="news">The modules are based on hardware of audio recorders Edic-mini and are designed as printed circuit boards. They can be mounted into various devices to function as voice recorders. The application is broad - our modules are widely used for various recording devices of different design.</div>
-    						<div class="newsHeader">Аudio-Video Recorders</div>
-    						<div class="news">Models of mAVR H.264 series can be located anywhere to provide discreet video surveillance with outstanding H.264 performance. The models record onto SD/SDHC memory card with capacity up to 32 GB, with subsequent decoding (converting) and possibility of playing back the recording on a computer. </div>
+    						<div class="contentPart">
+	    						<div class="columnHeader">Products</div>
+	    						<div class="newsHeader">Digital Аudio Recorders</div>
+	    						<div class="news">Digital audio recorders Edic-mini are intended for professional recording voice messages into flash memory. The recorder features an extremely small size and weight, long record time (up to 2400 hours), very low power consumption and wide frequency range. </div>
+	    						<div class="newsHeader">Audio Recording Modules</div>
+	    						<div class="news">The modules are based on hardware of audio recorders Edic-mini and are designed as printed circuit boards. They can be mounted into various devices to function as voice recorders. The application is broad - our modules are widely used for various recording devices of different design.</div>
+	    						<div class="newsHeader">Аudio-Video Recorders</div>
+	    						<div class="news">Models of mAVR H.264 series can be located anywhere to provide discreet video surveillance with outstanding H.264 performance. The models record onto SD/SDHC memory card with capacity up to 32 GB, with subsequent decoding (converting) and possibility of playing back the recording on a computer. </div>
+    						</div>
+    						<input type="button" class="blueButton" value="Know more"/>
     					</div>
     					<div class="psColumn sColumn">
-    						<div class="columnHeader">Solutions</div>
-    						<div class="newsHeader">Digital Аudio Recorders</div>
-    						<div class="news">Digital audio recorders Edic-mini are intended for professional recording voice messages into flash memory. The recorder features an extremely small size and weight, long record time (up to 2400 hours), very low power consumption and wide frequency range. </div>
-    						<div class="newsHeader">Audio Recording Modules</div>
-    						<div class="news">The modules are based on hardware of audio recorders Edic-mini and are designed as printed circuit boards. They can be mounted into various devices to function as voice recorders. The application is broad - our modules are widely used for various recording devices of different design.</div>
-    						<div class="newsHeader">Аudio-Video Recorders</div>
-    						<div class="news">Models of mAVR H.264 series can be located anywhere to provide discreet video surveillance with outstanding H.264 performance. The models record onto SD/SDHC memory card with capacity up to 32 GB, with subsequent decoding (converting) and possibility of playing back the recording on a computer. </div>
+    						<div class="contentPart">
+	    						<div class="columnHeader">Solutions</div>
+	    						<div class="newsHeader">Private investigation, law enforcement</div>
+	    						<div class="news">Many law enforcement agencies face the decision to record interrogations electronically. The underlying principle of recording is to accurately collect and preserve confession evidence in the most unbiased and efficient manner. </div>
+	    						<div class="newsHeader">Police and security</div>
+	    						<div class="news">We supply both audio and audio-video recording equipment for Police Forces, Government Agencies, Armed Forces, Banks, and other public and private sectors companies worldwide.</div>
+	    						<div class="newsHeader">Education</div>
+	    						<div class="news">When explaining any subject while teaching, you can achieve excellent levels of audience engagement by using sections of recorded speech among your learning materials.</div>
+	    						<div class="newsHeader">Business</div>
+	    						<div class="news">Digital voice recorders Edic-mini are the solution for busy business people who want to record notes, meetings, and ideas without the fuss and bother of tapes.</div>
+    						</div>
+    						<input type="button"class="blueButton" value="Know more"/>
+    					</div>
+    				</div>
+    				<div class="latestNews">
+    					<div class="newsHeader clearfix">
+	    					<div class="columnHeader">Latest news</div>
+	    					<div class="rightButton">
+	    						<input type="button"class="blueButton" value="More news"/>
+	    					</div>
+    					</div>
+    					<div id="amazon_scroller" class="amazon_scroller">
+				            <div class="amazon_scroller_mask">
+				                <ul>
+				                    <li>
+				                    	<div class="latestNewsContainer">
+				                    		<div class="latestNewsImage">
+				                    			<img src="img/firstNew.png"/>
+				                    		</div>
+				                    		<div class="latestNewsCont">
+					                    		<div class="latestNewsData">
+					                    			Jun 4, 2013
+					                    		</div>
+					                    		<div class="latestNewsHeader">
+					                    			<a href="">Changes in schedule</a>
+					                    		</div>
+					                    		<div class="latestNewsInf">
+					                    			Please note: working schedule in June will change due to state Russian holidays!
+					                    		</div>
+				                    		</div>
+				                    		<div class="newsUnderline">
+				                    			<img src="img/newsUnderline.png" />
+				                    		</div>
+				                    	</div>
+				                    </li>
+				                    <li>
+				                    	<div class="latestNewsContainer">
+				                    		<div class="latestNewsImage">
+				                    			<img src="img/secondNew.png"/>
+				                    		</div>
+				                    		<div class="latestNewsCont">
+					                    		<div class="latestNewsData">
+					                    			Jun 1, 2013
+					                    		</div>
+					                    		<div class="latestNewsHeader">
+					                    			<a href="">TS-Market: changes in May schedule</a>
+					                    		</div>
+					                    		<div class="latestNewsInf">
+					                    			The office of TS-Market is closed and not working due to the state Russian holidays in May 
+					                    		</div>
+				                    		</div>
+				                    		<div class="newsUnderline">
+				                    			<img src="img/newsUnderline.png" />
+				                    		</div>
+				                    	</div>
+				                    </li>
+				                    <li>
+				                    	<div class="latestNewsContainer">
+				                    		<div class="latestNewsImage">
+				                    			<img src="img/thirdNew.png"/>
+				                    		</div>
+				                    		<div class="latestNewsCont">
+					                    		<div class="latestNewsData">
+					                    			May 30, 2013
+					                    		</div>
+					                    		<div class="latestNewsHeader">
+					                    			<a href="">B22: don't miss the chance to buy</a>
+					                    		</div>
+					                    		<div class="latestNewsInf">
+					                    			In the future this model will be replaced by Edic-mini Tiny+ B76 model
+					                    		</div>
+				                    		</div>
+				                    		<div class="newsUnderline">
+				                    			<img src="img/newsUnderline.png" />
+				                    		</div>
+				                    	</div>
+				                    </li>
+				                    <li>
+				                    	<div class="latestNewsContainer">
+				                    		<div class="latestNewsImage">
+				                    			<img src="img/fourthNew.png"/>
+				                    		</div>
+				                    		<div class="latestNewsCont">
+					                    		<div class="latestNewsData">
+					                    			May 24, 2013
+					                    		</div>
+					                    		<div class="latestNewsHeader">
+					                    			<a href="">A14: meet new representative of Edic-mini Tiny16 series!</a>
+					                    		</div>
+					                    		<div class="latestNewsInf">
+					                    			Continuous recording up to 500 hours (20 days)
+					                    		</div>
+				                    		</div>
+				                    		<div class="newsUnderline">
+				                    			<img src="img/newsUnderline.png" />
+				                    		</div>
+				                    	</div>
+				                    </li>
+				                </ul>
+				            </div>
+				            <ul class="amazon_scroller_nav">
+				                <li></li>
+				                <li></li>
+				            </ul>
+				            <div style="clear: both"></div>
+				        </div>
+    				</div>
+    				<div class="bottomZones clearfix">
+    					<div class="videoZone cleadfix">
+							<div class="zoneImg zone">
+								<img src="img/video.png"/>
+							</div>
+							<div class="videoDiscr zone">
+								<div class="latestNewsHeader"><a href="">Watch the video to witness the process of manufacturing of world's smallest audio recorders.</a></div>
+	    						<div class="news">The journalist from the "Russia today" TV Company visited the office and the production department of our manufacturing company Telesystems. </div>
+	    						<a href="#" class="lastLink">Direct link</a>
+	    					</div>
+    					</div>
+						<div class="businessZone zone card">
+							<div class="zoneHeader">
+								Business <br>zone
+								<img src="img/businessLogo.png">
+							</div>
+							<div class="underline"></div>
+							<ul class="zoneMenu">
+								<li><a href="#">Our distributors</a></li>
+								<li><a href="#">Delivery and payment</a></li>
+								<li><a href="#">Privacy Policy</a></li>
+								<li><a href="#">Download</a></li>
+							</ul>
+						</div>
+						<div class="SupportZone zone card">
+							<div class="zoneHeader">
+								Support
+								<img src="img/supportLogo.png">
+							</div>
+							<div class="underline"></div>
+							<ul class="zoneMenu">
+								<li><a href="#">Frequently Asked Questions</a></li>
+								<li><a href="#">Download</a></li>
+								<li><a href="#">Warranty</a></li>
+								<li><a href="#">Contact board</a></li>
+							</ul>
+						</div>
+    				</div>
+    				<div class="footer clearfix">
+    					<div class="footerLeftPart">
+    						<ul class="clearfix">
+    							<li><a href="#">Company</a></li>
+    							<li><a href="#">Products</a></li>
+    							<li><a href="#">Solution</a></li>
+    							<li><a href="#">Support</a></li>
+    							<li><a href="#">Business</a></li>
+    							<li><a href="#">Contact Us</a></li>
+    						</ul>
+    						<div class="copyright">© 2009 TS-Market Ltd. All rights reseived</div>
+    					</div>
+    					<div class="footerRightPart">
+    						<img src="img/money.png"> <br>
+    						<a href="#">Click for more</a>
     					</div>
     				</div>
     			</div>
