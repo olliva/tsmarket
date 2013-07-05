@@ -10,8 +10,8 @@
 	zoom: 1;
 }
 .amazon_scroller_mask{
-	position: relative;
-	zoom: 1;
+	position: relative !important;
+	zoom: 1 !important;
 }
 .amazon_scroller_slider{
 	position: relative;
