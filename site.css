@@ -24,6 +24,9 @@ a:hover{
 input:focus{
     outline:none;
 }
+img{
+    border: 0;
+}
 
 .page{
     background: rgb(15,61,131); /* Old browsers */
