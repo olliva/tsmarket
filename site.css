@@ -29,14 +29,11 @@ img{
 }
 
 .rounded {
-    border: 1px solid #000;
     border-radius: 8px;
     -moz-border-radius: 8px;
     -webkit-border-radius: 8px;
     -khtml-border-radius: 8px;
     behavior: url(js/PIE.htc);
-    width: 200px;
-    height: 100px;
 }
 
 .page{
@@ -93,6 +90,10 @@ img{
     background-color: #5384d0;
     border-radius: 0 0 5px 5px;
     float: right;
+    height: 31px;
+    border: 0;
+    width: 160px;
+
 }
 .headerInformation .sign li{
     display: inline-block;
