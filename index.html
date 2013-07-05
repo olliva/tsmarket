@@ -76,12 +76,23 @@
 		    var h = $(this).find($(".latestNewsContainer")).height(); 
 		    max = h > max ? h : max;
 		});
+		max1 = max;
 		max = max + 165;
-		$(".amazon_scroller_mask ul li").each(function() {
-		    $(this).find($(".latestNewsContainer")).css("height", max +"px");
-		});
-		$(".amazon_scroller_mask").css("height", max + 6 + "px");
-		$("..amazon_scroller").css("height", max + 6 + "px");
+		
+		if ($.browser.msie  && parseInt($.browser.version, 10) === 8) {
+			$(".amazon_scroller_mask ul li").each(function() {
+			    $(this).find($(".latestNewsContainer")).css("height", max1 +"px");
+			});
+			$(".amazon_scroller_mask").css("height", max1 + 6 + "px");
+			$("..amazon_scroller").css("height", max1 + 6 + "px");
+		}
+		else{
+			$(".amazon_scroller_mask ul li").each(function() {
+			    $(this).find($(".latestNewsContainer")).css("height", max +"px");
+			});
+			$(".amazon_scroller_mask").css("height", max + 6 + "px");
+			$("..amazon_scroller").css("height", max + 6 + "px");
+		}
 
     });
     </script>
