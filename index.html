@@ -63,11 +63,11 @@
 
 	     if ($pColumn.height()>$sColumn.height())
 	        {
-	            $sColumn.css({"height",$pColumn.height() + "px"});
+	            $sColumn.css({"height":$pColumn.height() + "px"});
 	        }
 	        else
 	        {
-	         $pColumn.css({"height",$sColumn.height() + "px"});
+	         $pColumn.css({"height":$sColumn.height() + "px"});
 	        }
 	    }
 
@@ -80,17 +80,17 @@
 		max = max + 165;
 		if ($.browser.chrome){
 			$(".amazon_scroller_mask ul li").each(function() {
-			    $(this).find($(".latestNewsContainer")).css({"height", max +"px"});
+			    $(this).find($(".latestNewsContainer")).css({"height": max +"px"});
 			});
-			$(".amazon_scroller_mask").css({"height", max + 6 + "px"});
-			$(".amazon_scroller").css({"height", max + 6 + "px"});
+			$(".amazon_scroller_mask").css({"height": max + 6 + "px"});
+			$(".amazon_scroller").css({"height": max + 6 + "px"});
 		}
 		else{
 			$(".amazon_scroller_mask ul li").each(function() {
-			    $(this).find($(".latestNewsContainer")).css({"height", max1 +"px"});
+			    $(this).find($(".latestNewsContainer")).css({"height": max1 +"px"});
 			});
-			$(".amazon_scroller_mask").css({"height", max1 + 6 + "px"});
-			$(".amazon_scroller").css({"height", max1 + 6 + "px"});
+			$(".amazon_scroller_mask").css({"height": max1 + 6 + "px"});
+			$(".amazon_scroller").css({"height": max1 + 6 + "px"});
 		}
 		
 
