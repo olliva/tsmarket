@@ -37,3 +37,10 @@
 .newsUnderline  img{
 	left: 0;
 }
+.footerLeftPart ul li{
+	padding: 0 5px;
+}
+
+.sign{
+	height: 20px;
+}
