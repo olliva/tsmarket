@@ -60,6 +60,7 @@ img{
     float: left;
     margin-top: 30px;
     position: relative;
+    zoom:1;
 
 }
 .compName{
@@ -101,6 +102,8 @@ img{
     display: inline-block;
     padding: 0 6px;
     font-size: 13px;
+    zoom: 1;
+    *display: inline;
 }
 .headerInformation .sign li:first-child{
     padding-right: 0;
@@ -148,6 +151,7 @@ img{
 
 .searchContainer{
     position: relative;
+    zoom:1;
 }
 .searchContainer img{
     position: absolute;
@@ -190,6 +194,7 @@ input:-ms-input-placeholder{
 
 .menu{
     position: relative;
+    zoom: 1;
 }
 
 .corned_please_childs{
@@ -208,6 +213,8 @@ input:-ms-input-placeholder{
 }
 .corned_please{
     display: inline-block;
+    zoom: 1;
+    *display: inline;
     vertical-align: top;
     border: 1px solid #a2bad3; 
     border-radius: 5px 5px 0 0;
@@ -221,6 +228,7 @@ input:-ms-input-placeholder{
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccdbec', endColorstr='#c2d2e2',GradientType=0 ); /* IE6-9 */
     margin-bottom: -1px;
     position: relative;
+    zoom: 1;
 }
 .corned_please a{
     display: block;
@@ -258,6 +266,8 @@ white-space: nowrap;
 }
 .icons a{
     display: inline-block;
+    zoom: 1;
+    *display: inline;
     vertical-align: top;
     height: 10px;
     width: 11px;
@@ -299,6 +309,7 @@ white-space: nowrap;
     top: 0 !important;
     z-index: 20;
     position: relative;
+    zoom: 1;
 }
 .ic_right_nav img,
 .ic_left_nav img{
@@ -313,6 +324,7 @@ white-space: nowrap;
     width: 8px;
     height: 8px;
     position: relative;
+    zoom: 1;
     float: left;
     margin-right: 6px;
     border-radius: 8px;
@@ -550,6 +562,7 @@ white-space: nowrap;
     color: #414141;
     height: 80px;
     position: relative;
+    zoom: 1;
 }
 
 .zoneHeader img{
