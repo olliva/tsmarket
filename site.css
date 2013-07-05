@@ -34,7 +34,7 @@ img{
     -moz-border-radius: 8px;
     -webkit-border-radius: 8px;
     -khtml-border-radius: 8px;
-    behavior: url(PIE.htc);
+    behavior: url(js/PIE.htc);
     width: 200px;
     height: 100px;
 }
