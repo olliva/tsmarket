@@ -157,7 +157,7 @@ input::-webkit-input-placeholder {
     color: #7a7d80;
     font-style: italic;
 }
-input:-moz-placeholder {
+input::-moz-placeholder {
     color: #7a7d80;
     font-style: italic;
 }
