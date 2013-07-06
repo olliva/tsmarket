@@ -418,6 +418,7 @@ white-space: nowrap;
 .newsUnderline{
     position: absolute;
     bottom: -7px;
+    border-bottom: 0;
 }
 
 .latestNewsCont{
