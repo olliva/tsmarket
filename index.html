@@ -28,7 +28,7 @@
 		<![endif]-->
     </head>
     <script type="text/javascript">
-    $(window).load(function() {
+    $(document).ready(function() {
 
 	    $("#carousel").infiniteCarousel({
 	    	  	transitionSpeed: 500,
@@ -81,10 +81,12 @@
 	        {
 	         $pColumn.css("height",$sColumn.height() + "px");
 	        }
-	    }
-
-
-		var max = -1;
+	    }	
+    });
+    </script>
+    <script type="text/javascript">
+    $(window).load(function() {
+    	var max = -1;
 		$(".jcarousel-clip ul li").each(function() {
 		    var h = $(this).find($(".latestNewsContainer")).height(); 
 		    max = h > max ? h : max;
@@ -95,6 +97,7 @@
 		    $(this).find($(".latestNewsContainer")).height(max1);
 		    $("#mycarousel").height(max1+5);
 		});
+
     });
     </script>
 
