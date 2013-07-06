@@ -44,6 +44,12 @@ img{
 }
 .header{
     background: url(img/atom.png) no-repeat top center;
+    position: relative;
+zoom: 1;
+}
+.relative{
+    position: relative;
+    zoom: 1;
 }
 .header .logo{
     display: block;
@@ -84,6 +90,8 @@ img{
 }
 .headerInformation .sign li{
     display: inline-block;
+zoom: 1;
+display: inline;
     padding: 0 6px;
     font-size: 13px;
 }
@@ -190,6 +198,9 @@ input:-moz-placeholder {
 }
 .corned_please{
     display: inline-block;
+zoom: 1;
+display: inline;
+
     vertical-align: top;
     border: 1px solid #a2bad3; 
     border-radius: 5px 5px 0 0;
@@ -240,6 +251,8 @@ white-space: nowrap;
 }
 .icons a{
     display: inline-block;
+zoom: 1;
+display: inline;
     vertical-align: top;
     height: 10px;
     width: 11px;
