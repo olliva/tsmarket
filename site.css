@@ -91,7 +91,7 @@ zoom: 1;
 .headerInformation .sign li{
     display: inline-block;
 zoom: 1;
-display: inline;
+*display: inline;
     padding: 0 6px;
     font-size: 13px;
 }
@@ -199,7 +199,7 @@ input:-moz-placeholder {
 .corned_please{
     display: inline-block;
 zoom: 1;
-display: inline;
+*display: inline;
 
     vertical-align: top;
     border: 1px solid #a2bad3; 
@@ -252,7 +252,7 @@ white-space: nowrap;
 .icons a{
     display: inline-block;
 zoom: 1;
-display: inline;
+*display: inline;
     vertical-align: top;
     height: 10px;
     width: 11px;
