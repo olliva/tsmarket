@@ -169,6 +169,9 @@ input:-moz-placeholder {
     float: right;
     margin-right: 30px;
 }
+.advancedSearch:hover{
+    text-decoration: none;
+}
 
 .contentPage{
     background-color: white;
