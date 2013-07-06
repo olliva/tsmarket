@@ -10,6 +10,7 @@ body{
 }
 ul{
 	margin:0;
+    padding: 0;
 }
 a{
     text-decoration: none;
@@ -185,6 +186,7 @@ input:-moz-placeholder {
     padding-top: 8px;
     border-radius: 5px;
     border: 1px solid #a2bad3;
+    padding-left: 15px;
 }
 .corned_please{
     display: inline-block;
