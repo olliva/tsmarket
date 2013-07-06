@@ -13,7 +13,17 @@
         <link href="amazon_scroller.css" rel="stylesheet" type="text/css"></link>
 		<script type="text/javascript" src="js/amazon_scroller.js"></script>
 		<script type="text/javascript" src="js/modernizr.js"></script>
-		<script src="js/jquery.screwdefaultbuttonsV2.min.js" ></script>
+		<script type="text/javascript" src="jquery.jcarousel.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="skin.css">
+		<script type="text/javascript">
+
+			jQuery(document).ready(function() {
+			    jQuery('#mycarousel').jcarousel({
+			    	wrap: 'circular'
+			    });
+			});
+
+		</script>
     </head>
     <script type="text/javascript">
     $(document).ready(function(){
@@ -63,42 +73,38 @@
 
 	     if ($pColumn.height()>$sColumn.height())
 	        {
-	            $sColumn.css({"height":$pColumn.height() + "px"});
+	            $sColumn.css("height",$pColumn.height() + "px");
 	        }
 	        else
 	        {
-	         $pColumn.css({"height":$sColumn.height() + "px"});
+	         $pColumn.css("height",$sColumn.height() + "px");
 	        }
 	    }
 
-	    var max = -1;
-		$(".amazon_scroller_mask ul li").each(function() {
+
+		var max = -1;
+		$(".jcarousel-clip ul li").each(function() {
 		    var h = $(this).find($(".latestNewsContainer")).height(); 
 		    max = h > max ? h : max;
 		});
 		var max1 = max;
 		max = max + 165;
-		if ($.browser.chrome){
-			$(".amazon_scroller_mask ul li").each(function() {
+		if ($.browser.chrome || $.browser.safari){
+			$(".jcarousel-clip ul li").each(function() {
 			    $(this).find($(".latestNewsContainer")).css({"height": max +"px"});
+			    $("#mycarousel").css({"height": max + 5 +"px"});
 			});
-			$(".amazon_scroller_mask").css({"height": max + 6 + "px"});
-			$(".amazon_scroller").css({"height": max + 6 + "px"});
 		}
 		else{
-			$(".amazon_scroller_mask ul li").each(function() {
+			$(".jcarousel-clip ul li").each(function() {
 			    $(this).find($(".latestNewsContainer")).css({"height": max1 +"px"});
+			    $("#mycarousel").css({"height": max1 + 5 +"px"});
 			});
-			$(".amazon_scroller_mask").css({"height": max1 + 7 + "px"});
-			$(".amazon_scroller").css({"height": max1 + 7 + "px"});
+			
 		}
-		
 
     });
     </script>
-    <!--[if  IE 7]>
-    	<link rel="stylesheet" type="text/css" href="ie7.css"></link>
-	<![endif]-->
 
     <body>
     	<div class="page">
@@ -112,24 +118,24 @@
     					</div>
     				</a>
     				<div class="headerInformation">
-    					<div class="clearfix relative">
+    					<div class="clearfix">
 	    					<ul class="sign">
 	    						<li><a href="#">My account</a></li>
 	    						<li><a href="#">Sign out</a></li>
 	    					</ul>
     					</div>
-    					<div class="clearfix relative">
+    					<div class="clearfix">
 	    					<ul class="contactInformation">
 	    						<li><a href="#" class="mail"><img src="img/mail.png" />info@ts-market.com</a></li>
 	    						<li><a href="#" class="skype"><img src="img/skype.png" />ts-market</a></li>
 	    						<li><a href="" class="telephoneNumber">+7 (495) 638-88-00</a></li>
 	    					</ul>
     					</div>
-    					<div class="searchContainer clearfix relative">
+    					<div class="searchContainer clearfix">
     						<input type="text" class="headerInput" placeholder="search"/>
     						<a href=""><img src="img/loupe-white.png"/></a>
     					</div>
-    					<div class="relative">
+    					<div>
     						<a href="#" class="advancedSearch">Advanced search</a>
     					</div>
     				</div>
@@ -323,101 +329,102 @@
 	    						<input type="button"class="blueButton" value="More news"/>
 	    					</div>
     					</div>
-    					<div id="amazon_scroller" class="amazon_scroller">
-				            <div class="amazon_scroller_mask">
-				                <ul>
-				                    <li>
-				                    	<div class="latestNewsContainer">
-				                    		<div class="latestNewsImage">
-				                    			<img src="img/firstNew.png"/>
-				                    		</div>
-				                    		<div class="latestNewsCont">
-					                    		<div class="latestNewsData">
-					                    			Jun 4, 2013
+    					<div class=" jcarousel-skin-tango">
+							<div class="jcarousel-container jcarousel-container-horizontal" style="position: relative; display: block;">
+								<div class="jcarousel-clip jcarousel-clip-horizontal" style="position: relative;">
+									<ul id="mycarousel" class="jcarousel-list jcarousel-list-horizontal" style="overflow: hidden; position: relative; top: 0px; margin: 0px; padding: 0px; left: 0px; width: 950px;">
+					    				<li class="jcarousel-item jcarousel-item-horizontal jcarousel-item-1 jcarousel-item-1-horizontal" jcarouselindex="1" style="float: left; list-style: none;">
+					    					<div class="latestNewsContainer">
+						                		<div class="latestNewsImage">
+						                			<img src="img/firstNew.png"/>
+						                		</div>
+						                		<div class="latestNewsCont">
+						                    		<div class="latestNewsData">
+						                    			Jun 4, 2013
+						                    		</div>
+						                    		<div class="latestNewsHeader">
+						                    			<a href="">Changes in schedule</a>
+						                    		</div>
+						                    		<div class="latestNewsInf">
+						                    			Please note: working schedule in June will change due to state Russian holidays!
+						                    		</div>
+						                		</div>
+						                		<div class="newsUnderline">
+						                			<img src="img/newsUnderline.png" />
+						                		</div>
+						                	</div>
+					    				</li>
+									    <li class="jcarousel-item jcarousel-item-horizontal jcarousel-item-2 jcarousel-item-2-horizontal" jcarouselindex="2" style="float: left; list-style: none;">
+									    	<div class="latestNewsContainer">
+					                    		<div class="latestNewsImage">
+					                    			<img src="img/secondNew.png"/>
 					                    		</div>
-					                    		<div class="latestNewsHeader">
-					                    			<a href="">Changes in schedule</a>
+					                    		<div class="latestNewsCont">
+						                    		<div class="latestNewsData">
+						                    			Jun 1, 2013
+						                    		</div>
+						                    		<div class="latestNewsHeader">
+						                    			<a href="">TS-Market: changes in May schedule</a>
+						                    		</div>
+						                    		<div class="latestNewsInf">
+						                    			The office of TS-Market is closed and not working due to the state Russian holidays in May 
+						                    		</div>
 					                    		</div>
-					                    		<div class="latestNewsInf">
-					                    			Please note: working schedule in June will change due to state Russian holidays!
+					                    		<div class="newsUnderline">
+					                    			<img src="img/newsUnderline.png" />
 					                    		</div>
-				                    		</div>
-				                    		<div class="newsUnderline">
-				                    			<img src="img/newsUnderline.png" />
-				                    		</div>
-				                    	</div>
-				                    </li>
-				                    <li>
-				                    	<div class="latestNewsContainer">
-				                    		<div class="latestNewsImage">
-				                    			<img src="img/secondNew.png"/>
-				                    		</div>
-				                    		<div class="latestNewsCont">
-					                    		<div class="latestNewsData">
-					                    			Jun 1, 2013
+					                    	</div>
+									    </li>
+									    <li class="jcarousel-item jcarousel-item-horizontal jcarousel-item-3 jcarousel-item-3-horizontal" jcarouselindex="3" style="float: left; list-style: none;">
+									    	<div class="latestNewsContainer">
+					                    		<div class="latestNewsImage">
+					                    			<img src="img/thirdNew.png"/>
 					                    		</div>
-					                    		<div class="latestNewsHeader">
-					                    			<a href="">TS-Market: changes in May schedule</a>
+					                    		<div class="latestNewsCont">
+						                    		<div class="latestNewsData">
+						                    			May 30, 2013
+						                    		</div>
+						                    		<div class="latestNewsHeader">
+						                    			<a href="">B22: don't miss the chance to buy</a>
+						                    		</div>
+						                    		<div class="latestNewsInf">
+						                    			In the future this model will be replaced by Edic-mini Tiny+ B76 model
+						                    		</div>
 					                    		</div>
-					                    		<div class="latestNewsInf">
-					                    			The office of TS-Market is closed and not working due to the state Russian holidays in May 
+					                    		<div class="newsUnderline">
+					                    			<img src="img/newsUnderline.png" />
 					                    		</div>
-				                    		</div>
-				                    		<div class="newsUnderline">
-				                    			<img src="img/newsUnderline.png" />
-				                    		</div>
-				                    	</div>
-				                    </li>
-				                    <li>
-				                    	<div class="latestNewsContainer">
-				                    		<div class="latestNewsImage">
-				                    			<img src="img/thirdNew.png"/>
-				                    		</div>
-				                    		<div class="latestNewsCont">
-					                    		<div class="latestNewsData">
-					                    			May 30, 2013
+					                    	</div>
+									    </li>
+									    <li class="jcarousel-item jcarousel-item-horizontal jcarousel-item-4 jcarousel-item-4-horizontal" jcarouselindex="4" style="float: left; list-style: none;">
+									    	<div class="latestNewsContainer">
+					                    		<div class="latestNewsImage">
+					                    			<img src="img/fourthNew.png"/>
 					                    		</div>
-					                    		<div class="latestNewsHeader">
-					                    			<a href="">B22: don't miss the chance to buy</a>
+					                    		<div class="latestNewsCont">
+						                    		<div class="latestNewsData">
+						                    			May 24, 2013
+						                    		</div>
+						                    		<div class="latestNewsHeader">
+						                    			<a href="">A14: meet new representative of Edic-mini Tiny16 series!</a>
+						                    		</div>
+						                    		<div class="latestNewsInf">
+						                    			Continuous recording up to 500 hours (20 days)
+						                    		</div>
 					                    		</div>
-					                    		<div class="latestNewsInf">
-					                    			In the future this model will be replaced by Edic-mini Tiny+ B76 model
+					                    		<div class="newsUnderline">
+					                    			<img src="img/newsUnderline.png" />
 					                    		</div>
-				                    		</div>
-				                    		<div class="newsUnderline">
-				                    			<img src="img/newsUnderline.png" />
-				                    		</div>
-				                    	</div>
-				                    </li>
-				                    <li>
-				                    	<div class="latestNewsContainer">
-				                    		<div class="latestNewsImage">
-				                    			<img src="img/fourthNew.png"/>
-				                    		</div>
-				                    		<div class="latestNewsCont">
-					                    		<div class="latestNewsData">
-					                    			May 24, 2013
-					                    		</div>
-					                    		<div class="latestNewsHeader">
-					                    			<a href="">A14: meet new representative of Edic-mini Tiny16 series!</a>
-					                    		</div>
-					                    		<div class="latestNewsInf">
-					                    			Continuous recording up to 500 hours (20 days)
-					                    		</div>
-				                    		</div>
-				                    		<div class="newsUnderline">
-				                    			<img src="img/newsUnderline.png" />
-				                    		</div>
-				                    	</div>
-				                    </li>
-				                </ul>
-				            </div>
-				            <ul class="amazon_scroller_nav">
-				                <li></li>
-				                <li></li>
-				            </ul>
-				            <div style="clear: both"></div>
-				        </div>
+					                    	</div>
+									    </li>
+					  				</ul>
+					  			</div>
+					  			<div class="jcarousel-prev jcarousel-prev-horizontal" style="display: block;">
+					  			</div>
+					  			<div class="jcarousel-next jcarousel-next-horizontal" style="display: block;">
+					  			</div>
+					  		</div>
+					  	</div>
     				</div>
     				<div class="bottomZones clearfix">
     					<div class="videoZone cleadfix">
