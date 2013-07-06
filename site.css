@@ -20,7 +20,8 @@ a:hover{
 input:focus{
     outline:none;
 }
-.img{
+
+img{
     border: 0;
 }
 
